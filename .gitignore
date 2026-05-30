@@ -1,0 +1,17 @@
+# Data files (too large for GitHub)
+*.csv
+*.csv.gz
+*.parquet
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Jupyter
+*.ipynb_checkpoints
