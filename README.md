@@ -99,7 +99,7 @@ KS Statistic → banking-standard separation metric
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/credit-risk-lending-club.git
+git clone https://github.com/proverb27515/credit-risk-lending-club.git
 cd credit-risk-lending-club
 
 # 2. Create a virtual environment and install dependencies
