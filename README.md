@@ -45,9 +45,11 @@ The model addresses three practical goals:
 
 ![Default Rate Over Time](fig_02_default_rate_over_time.png)
 
-Default rates peaked sharply in **2007–2009** during the Global Financial Crisis, then declined as Lending Club tightened underwriting post-crisis. Loan volume grew dramatically from 2012 onward as the platform scaled.
+The chart starts from 2009 because 2007 (603 loans) and 2008 (2,393 loans) represent negligible volume compared to peak years (400K+) and would be invisible on the same scale. Lending Club launched in May 2007 and only reached statistical significance from 2009 onward.
 
-The cyclical pattern carries an important modeling lesson: a credit model trained only on boom-period data will underestimate systemic risk during downturns. Our dataset spans a **full economic cycle** — including the crisis period — giving the model exposure to both stressed and benign credit environments, producing a more robust estimator.
+Default rates were highest in **2009–2011** (the tail of the Global Financial Crisis), then declined steadily as Lending Club tightened underwriting standards. Loan volume grew dramatically from 2012, reflecting the platform's rapid scaling during the post-crisis low-rate environment.
+
+The cyclical pattern carries an important modeling lesson: a credit model trained only on post-2013 boom-period data would underestimate systemic risk. Including the 2009–2011 stressed period gives the model exposure to both credit deterioration and recovery, producing a more robust estimator.
 
 ---
 
