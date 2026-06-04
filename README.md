@@ -295,12 +295,27 @@ Raw Data: 1.8M rows, 151 features
 
 ---
 
-## How to Run
+## Interactive Demo (Streamlit)
+
+The pre-trained model is included in the repo (`lgbm_model.pkl`). Run the interactive demo without downloading the dataset or retraining:
+
+```bash
+git clone https://github.com/proverb27515/credit_risk_lending.git
+cd credit_risk_lending
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Enter loan amount, interest rate, FICO score, DTI, and other borrower details to receive a real-time credit decision with SHAP feature attribution.
+
+---
+
+## How to Reproduce from Scratch
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/proverb27515/credit-risk-lending-club.git
-cd credit-risk-lending-club
+git clone https://github.com/proverb27515/credit_risk_lending.git
+cd credit_risk_lending
 
 # 2. Install dependencies (Anaconda recommended on Apple Silicon)
 pip install -r requirements.txt
@@ -312,7 +327,7 @@ pip install -r requirements.txt
 # 4. Run notebooks in order
 jupyter notebook
 # → 1_eda.ipynb        (EDA + visualizations)
-# → 2_modeling.ipynb   (Feature engineering + Optuna + SHAP)
+# → 2_modeling.ipynb   (Feature engineering + Optuna + SHAP + saves model artifacts)
 ```
 
 > **Apple Silicon (M1/M2) note**: XGBoost and LightGBM require `libomp`. Use Anaconda Python with the `anaconda-m1` kernel — both libraries work natively on arm64.
@@ -321,4 +336,4 @@ jupyter notebook
 
 ## Skills Demonstrated
 
-`Machine Learning` · `Credit Risk Modeling` · `Hyperparameter Optimization (Optuna)` · `SHAP Interpretability` · `Feature Engineering` · `Class Imbalance Handling` · `Economic Theory Application` · `Data Visualization` · `Python` · `XGBoost` · `LightGBM` · `Pandas` · `Scikit-learn`
+`Machine Learning` · `Credit Risk Modeling` · `Hyperparameter Optimization (Optuna)` · `SHAP Interpretability` · `Feature Engineering` · `Class Imbalance Handling` · `Fairness Analysis (ECOA/EEOC)` · `Model Calibration` · `Feature Drift (PSI)` · `Economic Theory Application` · `Data Visualization` · `Streamlit` · `Python` · `XGBoost` · `LightGBM` · `Pandas` · `Scikit-learn`
