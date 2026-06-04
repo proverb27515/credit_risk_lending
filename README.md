@@ -47,9 +47,15 @@ The model addresses three practical goals:
 
 The chart starts from 2009 because 2007 (603 loans) and 2008 (2,393 loans) represent negligible volume compared to peak years (400K+) and would be invisible on the same scale. Lending Club launched in May 2007 and only reached statistical significance from 2009 onward.
 
-Default rates were highest in **2009–2011** (the tail of the Global Financial Crisis), then declined steadily as Lending Club tightened underwriting standards. Loan volume grew dramatically from 2012, reflecting the platform's rapid scaling during the post-crisis low-rate environment.
+The chart shows **observed default rates among closed loans only** (Fully Paid or Charged Off). This introduces a critical data construction effect — **vintage truncation bias** — that must be understood to read the chart correctly:
 
-The cyclical pattern carries an important modeling lesson: a credit model trained only on post-2013 boom-period data would underestimate systemic risk. Including the 2009–2011 stressed period gives the model exposure to both credit deterioration and recovery, producing a more robust estimator.
+- **2016–2017 show the highest observed rates (23%)**, but this is partly an artifact: the dataset ends in Q4 2018, so the majority of 2016–2017 loans that are *still performing* have not yet closed and are absent from the denominator. The closed loans from these vintages are disproportionately early defaulters, inflating the observed rate.
+- **2009–2011 rates (14–15%) reflect the true seasoned default rate** for those cohorts — by 2018, virtually all loans from those vintages had fully resolved, so the denominator is complete.
+- **2018 (15.7%) is artificially low** for the same truncation reason: only fast defaulters have closed; the good loans haven't matured yet.
+
+The genuine takeaway: for **fully seasoned vintages**, default rates were relatively stable at 14–20% throughout the platform's history. The late-vintage spike is a dataset artifact, not evidence that 2016 borrowers were dramatically riskier than 2009 borrowers.
+
+This carries an important modeling implication: our temporal split (train 2007–2016, test 2017–2018) means the test set includes loans that are still partially seasoning. The model's true out-of-time performance on fully resolved 2017–2018 cohorts would only be measurable with data beyond Q4 2018.
 
 ---
 
